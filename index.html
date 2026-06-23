@@ -3,20 +3,31 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Not Hesaplama Sistemi</title>
+    <title>Döviz Çevirici</title>
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
     <div class="container">
-        <h1>Not Hesaplama Sistemi</h1>
+        <h1>Döviz Çevirici</h1>
 
-        <input type="number" id="vize" placeholder="Vize Notu">
-        <input type="number" id="final" placeholder="Final Notu">
+        <input type="number" id="miktar" placeholder="Miktar giriniz">
 
-        <button onclick="hesapla()">Hesapla</button>
+        <select id="birinciPara">
+            <option value="TRY">Türk Lirası</option>
+            <option value="USD">Dolar</option>
+            <option value="EUR">Euro</option>
+        </select>
 
-        <h2 id="sonuc"></h2>
+        <select id="ikinciPara">
+            <option value="USD">Dolar</option>
+            <option value="EUR">Euro</option>
+            <option value="TRY">Türk Lirası</option>
+        </select>
+
+        <button onclick="cevir()">Çevir</button>
+
+        <h2 id="sonuc">Sonuç burada görünecek</h2>
     </div>
 
     <script src="script.js"></script>

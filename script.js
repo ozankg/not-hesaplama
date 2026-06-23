@@ -1,16 +1,19 @@
-function hesapla() {
-    let vize = Number(document.getElementById("vize").value);
-    let final = Number(document.getElementById("final").value);
+function cevir() {
 
-    let ortalama = (vize * 0.4) + (final * 0.6);
+    let miktar = document.getElementById("miktar").value;
+    let birinciPara = document.getElementById("birinciPara").value;
+    let ikinciPara = document.getElementById("ikinciPara").value;
+    let sonuc = document.getElementById("sonuc");
 
-    let sonuc = "";
+    let kur = {
+        TRY: 1,
+        USD: 40,
+        EUR: 43
+    };
 
-    if (ortalama >= 50) {
-        sonuc = "Geçtiniz! Ortalama: " + ortalama.toFixed(2);
-    } else {
-        sonuc = "Kaldınız! Ortalama: " + ortalama.toFixed(2);
-    }
+    let tlMiktar = miktar * kur[birinciPara];
+    let cevrilenMiktar = tlMiktar / kur[ikinciPara];
 
-    document.getElementById("sonuc").innerText = sonuc;
+    sonuc.innerHTML =
+        `${miktar} ${birinciPara} = ${cevrilenMiktar.toFixed(2)} ${ikinciPara}`;
 }
